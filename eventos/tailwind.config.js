@@ -4,7 +4,15 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    boxShadow: {
+      "eventbox":"0px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.05)",
+    },
+    extend: {
+      fontFamily: {
+        'montserrat': ['Montserrat', 'sans-serif'], 
+        'sora':['Sora', 'sans-serif']
+      }
+    },
   },
   plugins: [],
 }
