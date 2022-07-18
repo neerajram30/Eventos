@@ -17,7 +17,7 @@ function Event({event,i}) {
                 </div>
               </div>
               <div className='flex justify-end mt-10 '>
-                <button className='bg-red-600 p-2 text-white text-sm'>Register</button>
+                <button className=' p-2 text-white text-sm'>Register</button>
               </div>
     </div>
   )
