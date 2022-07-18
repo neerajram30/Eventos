@@ -1,10 +1,11 @@
 import './App.css';
-import Events from './components/Event/Events';
+import Approuter from './Approuter';
+
 
 function App() {
   return (
     <div >
-      <Events/>
+    <Approuter/>
     </div>
   );
 }
