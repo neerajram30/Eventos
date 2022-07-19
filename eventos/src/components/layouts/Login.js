@@ -4,7 +4,7 @@ import LoginForm from '../Login/LoginFrom'
 
 function Login() {
   return (
-    <main className='flex md:flex-row flex-col items-center h-screen md:justify-between w-screen'>
+    <main className='md:flex block items-center h-screen md:justify-between md:mt-0 mt-20'>
         <Graphic/>
         <LoginForm/>
     </main>
