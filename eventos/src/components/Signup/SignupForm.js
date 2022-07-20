@@ -19,7 +19,7 @@ function SignupForm() {
             console.log(message);
         }
         if(isSuccess || user){
-            navigate('/')
+            navigate('/login')
         }
         dispatch(reset())
     },[user, isError, isSuccess, message, navigate, dispatch])
@@ -39,7 +39,7 @@ function SignupForm() {
             password
         }
 
-        dispatch(register(userData,))
+        dispatch(register(userData))
     }
 
 
