@@ -1,8 +1,27 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
+import {useNavigate} from 'react-router-dom'
+import {login, reset} from '../../features/auth/authSlice'
 
 function LoginFrom() {
   const [formData,setformData] = useState({email:'', password:''});
   const {email,password} = formData;
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const {user, isLoading, isError, isSuccess, message} = useSelector(
+    (state)=>state.auth
+)
+
+useEffect(()=>{
+  if(isError){
+      console.log(message);
+  }
+  if(isSuccess || user){
+      navigate('/')
+  }
+  dispatch(reset())
+},[user, isError, isSuccess, message, navigate, dispatch])
 
   const formOnChange = (e)=>{
     setformData((prevState)=>({
@@ -13,8 +32,18 @@ function LoginFrom() {
 
   const formOnSubmit = (e)=>{
     e.preventDefault();
-    console.log(e.target);
+    const userData = {
+      email,
+      password
   }
+
+  dispatch(login(userData))
+    
+  }
+
+  if (isLoading){
+    console.log('loading')
+}
 
   return (
     <div className='md:mr-32 mr-0 pl-3 pr-3 md:pl-0 md:pr-0'>
