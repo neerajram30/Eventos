@@ -1,8 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import {useSelector, useDispatch} from 'react-redux'
+import {useNavigate} from 'react-router-dom'
+import {register, reset} from '../../features/auth/authSlice'
+
 
 function SignupForm() {
     const [formData, setformData] = useState({ username: '', email: '', password: '' });
     const { username, email, password } = formData;
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const {user, isLoading, isError, isSuccess, message} = useSelector(
+        (state)=>state.auth
+    )
+
+    useEffect(()=>{
+        if(isError){
+            console.log(message);
+        }
+        if(isSuccess || user){
+            navigate('/')
+        }
+        dispatch(reset())
+    },[user, isError, isSuccess, message, navigate, dispatch])
 
     const formOnChange = (e) => {
         setformData((prevState) => ({
@@ -13,6 +33,18 @@ function SignupForm() {
 
     const formOnSubmit = (e) => {
         e.preventDefault();
+        const userData = {
+            username,
+            email,
+            password
+        }
+
+        dispatch(register(userData,))
+    }
+
+
+    if (isLoading){
+        console.log('loading')
     }
 
     return (
