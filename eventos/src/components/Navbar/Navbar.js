@@ -17,7 +17,7 @@ function Navbar() {
   }
 
   return (
-    <nav className='bg-nvbg h-14'>
+    <nav className='bg-nvbg h-14 font-montserrat'>
         <div className='flex justify-between'>
             <div>
                 Eventos
