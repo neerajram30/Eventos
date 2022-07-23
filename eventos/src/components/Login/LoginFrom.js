@@ -19,6 +19,7 @@ useEffect(()=>{
   }
   if(isSuccess || user){
       navigate('/')
+      console.log(isSuccess);
   }
   dispatch(reset())
 },[user, isError, isSuccess, message, navigate, dispatch])
