@@ -10,15 +10,16 @@ function EventForm() {
   const dispatch = useDispatch()
 
   const {event, isLoading, isError, isSuccess, message} = useSelector(
-    (state)=>state.auth
+    (state)=>state.event
 )
-
 useEffect(()=>{
+  console.log(isSuccess);
   if(isError){
       console.log(message);
   }
-  if(isSuccess || event){
+  if(isSuccess == true){
       navigate('/')
+      console.log('success');
   }
   dispatch(reset())
 },[event, isError, isSuccess, message, navigate, dispatch])
@@ -49,7 +50,6 @@ useEffect(()=>{
   if (isLoading){
     console.log('loading')
 }
-
   return (
     <main className='pb-10 font-montserrat'>
       <div className='ml-5'>
@@ -71,7 +71,7 @@ useEffect(()=>{
           <div className='flex flex-col mt-5'>
             <label htmlFor="" className='text-sm font-black'>Start date</label>
             <input
-              type="text"
+              type="date"
               name="startDate"
               className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#868383c9] shadow-formbox text-sm rounded-sm'
               value={startDate}
@@ -81,7 +81,7 @@ useEffect(()=>{
           <div className='flex flex-col mt-5'>
             <label htmlFor="" className='text-sm font-black'>End date</label>
             <input
-              type="text"
+              type="date"
               name="endDate"
               className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#868383c9] shadow-formbox text-sm rounded-sm'
               value={endDate}
