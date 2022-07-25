@@ -63,7 +63,7 @@ useEffect(()=>{
               type="text"
               placeholder='Title here'
               name="title"
-              className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#868383c9] shadow-formbox text-sm rounded-sm'
+              className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#f5f5f5c9] shadow-formbox text-sm rounded-sm'
               value={title}
               onChange={formOnChange} 
             /><br />
@@ -73,7 +73,7 @@ useEffect(()=>{
             <input
               type="date"
               name="startDate"
-              className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#868383c9] shadow-formbox text-sm rounded-sm'
+              className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#f5f5f5c9] shadow-formbox text-sm rounded-sm'
               value={startDate}
               onChange={formOnChange}
             /><br />
@@ -83,7 +83,7 @@ useEffect(()=>{
             <input
               type="date"
               name="endDate"
-              className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#868383c9] shadow-formbox text-sm rounded-sm'
+              className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#f5f5f5c9] shadow-formbox text-sm rounded-sm'
               value={endDate}
               onChange={formOnChange}
             /><br />
@@ -94,7 +94,7 @@ useEffect(()=>{
             type="text"
             placeholder='venue'
             name="venue"
-            className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#868383c9] shadow-formbox text-sm rounded-sm'
+            className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#f5f5f5c9] shadow-formbox text-sm rounded-sm'
             value={venue}
             onChange={formOnChange}
           /><br />
@@ -105,10 +105,11 @@ useEffect(()=>{
           name="description" 
           cols="30" 
           rows="5" 
-          className='pl-4 pr-4 pt-2 pb-2 mt-2 md:w-96 w-full shadow-[#868383c9] shadow-formbox text-sm rounded-sm'
+          placeholder='Description'
+          className='pl-4 pr-4 pt-2 pb-2 mt-2 md:w-96 w-full shadow-[#f5f5f5c9] shadow-formbox text-sm rounded-md'
           value={description}
           onChange={formOnChange}
-          >he
+          >
           </textarea>
           </div>
           <input type="submit" name="submit" value="Create" className='md:w-80 w-full h-10 text-sm bg-blue text-white mt-10 rounded-sm font-extrabold' />
