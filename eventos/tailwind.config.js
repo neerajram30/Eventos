@@ -12,8 +12,8 @@ module.exports = {
     },
     boxShadow: {
       "eventbox":"0px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.05)",
-      "formbox":"0px 0px 1px 1px rgba(0, 0, 0, 0.05)",
-      "createform":"1px 1px 3px 3px rgba(0, 0, 0, 0.05)",
+      "formbox":"0px 1px 2px 0px rgba(0, 0, 0, 0.05)",
+      "createform":"0px 2px 3px 0.5px rgba(0, 0, 0, 0.05)",
     },
     extend: {
       fontFamily: {
