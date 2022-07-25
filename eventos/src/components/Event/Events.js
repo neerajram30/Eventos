@@ -1,25 +1,42 @@
-import React,{useEffect,useState} from 'react'
-import axios from 'axios'
+import React,{useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getEvents,reset } from '../../features/event/eventSlice'
 import Event from './Event'
 
 function Events() {
-    const [data,setData] = useState([])
-    useEffect(() => {
-        axios.get('http://localhost:5000/api/events')
-        .then((response)=>setData(response.data.events))
-        .catch((err)=>console.log(err))
-        
-    }, [])
+
+  const dispatch = useDispatch();
+  const { event, isLoading, isError, message } = useSelector(
+    (state) => state.event
+  )
+
+
+  useEffect(() => {
+    if (isError) {
+      console.log(message);
+    }
+    if (!isError){
+
+      dispatch(getEvents())
+    }
+      dispatch(reset())
     
+  }, [isError, message, dispatch])
+if(isLoading){
+  <p>ohh</p>
+}
 
   return (
       <main className='flex justify-center mt-10 font-montserrat'>
-        {console.log(data)}
-        <div className='w-2/3'>
-         {data.map((event,i)=>
-           <Event event={event} key={i}/>
+        
+         <div className='w-2/3'>
+         {event.map((data,i)=>
+           <Event event={data} key={i}/>
           )} 
-        </div>
+        </div>  
+
+        
+        {console.log(event) }
       </main>
   )
 }
