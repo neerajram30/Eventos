@@ -1,5 +1,6 @@
 import React from 'react'
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
+import Myevent from './components/layouts/Myevent'
 import Create from './components/layouts/Create'
 import Home from './components/layouts/Home'
 import Login from './components/layouts/Login'
@@ -16,7 +17,8 @@ function Approuter() {
         <Route path='/signup' element={<Signup/>}/>
         {/* <Route path='/create' element={<Create/>}/> */}
         <Route element={<PrivateRoutes/>}>
-              <Route path='/create' element={<Create/>} />
+              <Route exact path='/create' element={<Create/>} />
+              <Route exact path='/myevent' element={<Myevent/>} />
         </Route>
       </Routes>   
     </Router>
