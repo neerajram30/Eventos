@@ -10,7 +10,7 @@ function classNames(...classes) {
 }
 
 export default function Example() {
-    const {user} = useSelector((state)=> state.auth);
+  const {user} = useSelector((state)=> state.auth);
     const dispatch = useDispatch();
     const navigate =useNavigate();
     const clickHandle = ()=>{
