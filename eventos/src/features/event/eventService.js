@@ -8,6 +8,7 @@ const create = async (eventData, token) =>{
           Authorization: `Bearer ${token}`,
         },
       }
+    console.log(config);  
     const response = await axios.post(API_URL + 'create', eventData, config)
 
     if(response.data){
@@ -16,8 +17,27 @@ const create = async (eventData, token) =>{
 
 }
 
+const getEvents = async ()=>{
+  const response = await axios.get(API_URL);
+  return response.data.events;
+}
+
+const getMyevents = async (token)=>{
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+  
+  const response = await axios.get(API_URL + 'myevent', config)
+  return response.data;
+}
+
+
 const eventService = {
     create,
+    getEvents,
+    getMyevents,
 }
 
 export default eventService
