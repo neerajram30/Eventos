@@ -56,7 +56,7 @@ useEffect(()=>{
       type="text" 
       placeholder='Email' 
       name="email" 
-      className='pl-4 pr-4 h-10 md:w-80 w-full shadow-[#000000c9] shadow-formbox text-sm rounded-sm'
+      className='pl-4 pr-4 h-10 md:w-80 w-full shadow-[#979797c9] shadow-userform text-sm rounded-md bg-formbg'
       value={email}
       onChange={formOnChange}    
       /><br/>
@@ -64,7 +64,7 @@ useEffect(()=>{
       type="password"  
       placeholder='Password' 
       name="password" 
-      className='pl-4 pr-4 mt-5 h-10 md:w-80 w-full shadow-[#000000c9] shadow-formbox text-sm rounded-sm'
+      className='pl-4 pr-4 mt-5 h-10 md:w-80 w-full shadow-[#979797c9] shadow-formbox text-sm rounded-sm bg-formbg'
       value={password}
       onChange={formOnChange} 
       /><br/>
