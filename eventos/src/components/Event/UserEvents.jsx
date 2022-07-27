@@ -17,13 +17,16 @@ function UserEvents() {
     if (isError) {
       console.log(message);
     }
+    if(!user){
+      navigate('/login')
+    }
     if (!isError){
 
       dispatch(getMyevents())
     }
       dispatch(reset())
     
-  }, [ isError, message, dispatch])
+  }, [user, navigate, isError, message, dispatch])
 if(isLoading){
   <p>ohh</p>
 }
