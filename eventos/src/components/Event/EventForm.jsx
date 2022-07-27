@@ -17,7 +17,7 @@ useEffect(()=>{
   if(isError){
       console.log(message);
   }
-  if(isSuccess == true){
+  if(isSuccess){
       navigate('/')
       console.log('success');
   }
@@ -51,19 +51,19 @@ useEffect(()=>{
     console.log('loading')
 }
   return (
-    <main className='pb-10 font-montserrat'>
-      <div className='ml-5'>
+    <main className='pb-10 font-montserrat flex items-center justify-center flex-col pt-10 md:bg-blue'>
+      <div className='font-inter text-2xl md:text-white'>
         <h1>Create Event</h1>
       </div>
-      <div className='ml-20 bg-formbg w-fit rounded-md shadow-[#ada6a63d] shadow-createform mt-10'>
-        <form className='pt-5 pl-20 pr-20 pb-10' onSubmit={formOnSubmit}>
-          <div className='flex flex-col'>
+      <div className='bg-white w-fit rounded-md shadow-[#ada6a63d] shadow-createform mt-5'>
+        <form className='w-full pt-20 md:pl-20 pl-6 md:pr-20 pr-5 pb-20 flex md:items-center items-start flex-col' onSubmit={formOnSubmit}>
+          <div className='flex flex-col w-full'>
             <label htmlFor="title" className='text-sm font-black'>Title</label>
             <input
               type="text"
               placeholder='Title here'
               name="title"
-              className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#f5f5f5c9] shadow-formbox text-sm rounded-sm'
+              className='pl-4 pr-4 mt-2 h-10 md:w-96 shadow-[#f5f5f5c9] shadow-formbox text-sm rounded-sm bg-formbg'
               value={title}
               onChange={formOnChange} 
             /><br />
@@ -73,7 +73,7 @@ useEffect(()=>{
             <input
               type="date"
               name="startDate"
-              className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#f5f5f5c9] shadow-formbox text-sm rounded-sm'
+              className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#f5f5f5c9] shadow-formbox text-sm rounded-sm bg-formbg'
               value={startDate}
               onChange={formOnChange}
             /><br />
@@ -83,7 +83,7 @@ useEffect(()=>{
             <input
               type="date"
               name="endDate"
-              className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#f5f5f5c9] shadow-formbox text-sm rounded-sm'
+              className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#f5f5f5c9] shadow-formbox text-sm rounded-sm bg-formbg'
               value={endDate}
               onChange={formOnChange}
             /><br />
@@ -94,7 +94,7 @@ useEffect(()=>{
             type="text"
             placeholder='venue'
             name="venue"
-            className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#f5f5f5c9] shadow-formbox text-sm rounded-sm'
+            className='pl-4 pr-4 mt-2 h-10 md:w-96 w-full shadow-[#f5f5f5c9] shadow-formbox text-sm rounded-sm bg-formbg'
             value={venue}
             onChange={formOnChange}
           /><br />
@@ -106,13 +106,13 @@ useEffect(()=>{
           cols="30" 
           rows="5" 
           placeholder='Description'
-          className='pl-4 pr-4 pt-2 pb-2 mt-2 md:w-96 w-full shadow-[#f5f5f5c9] shadow-formbox text-sm rounded-md'
+          className='pl-4 pr-4 pt-2 pb-2 mt-2 md:w-96 w-full shadow-[#f5f5f5c9] shadow-formbox text-sm rounded-md bg-formbg'
           value={description}
           onChange={formOnChange}
           >
           </textarea>
           </div>
-          <input type="submit" name="submit" value="Create" className='md:w-80 w-full h-10 text-sm bg-blue text-white mt-10 rounded-sm font-extrabold' />
+          <input type="submit" name="submit" value="Create" className='md:w-80 w-full h-10 text-sm bg-blue text-white mt-10 rounded-md font-extrabold' />
         </form>
       </div>
     </main>
