@@ -6,7 +6,7 @@ import Home from './components/layouts/Home'
 import Login from './components/layouts/Login'
 import Signup from './components/layouts/Signup'
 import PrivateRoutes from './components/Route/PrivateRoutes'
-import Eventview from './components/layouts/Eventview'
+import Eventview from './components/layouts/Eventviews'
 
 
 function Approuter() {
