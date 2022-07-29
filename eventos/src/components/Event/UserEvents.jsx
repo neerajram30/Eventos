@@ -1,43 +1,43 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getMyevents,reset } from '../../features/event/eventSlice'
+import { getMyevents, reset } from '../../features/event/eventSlice'
 import Event from './Event'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function UserEvents() {
-   const dispatch = useDispatch();
-   const navigate = useNavigate();
-   const {user} = useSelector((state)=> state.auth);
-   const { event, isLoading, isError, message } = useSelector(
-     (state) => state.event
-   )
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { user } = useSelector((state) => state.auth);
+  const { event, isLoading, isError, message } = useSelector(
+    (state) => state.event
+  )
 
 
-   useEffect(() => {
+  useEffect(() => {
     if (isError) {
       console.log(message);
     }
-    if(!user){
+    if (!user) {
       navigate('/login')
     }
-    if (!isError){
+    if (!isError) {
 
       dispatch(getMyevents())
     }
-      dispatch(reset())
-    
+    dispatch(reset())
+
   }, [user, navigate, isError, message, dispatch])
-if(isLoading){
-  <p>ohh</p>
-}
+  if (isLoading) {
+    <p>ohh</p>
+  }
 
   return (
     <main className='flex justify-center mt-10 font-montserrat'>
-       <div className='w-2/3'>
+      <div className='w-2/3'>
         {event.map((data, i) =>
           <Event event={data} key={i} />
         )}
-      </div> 
+      </div>
 
       {console.log(event)}
     </main>
