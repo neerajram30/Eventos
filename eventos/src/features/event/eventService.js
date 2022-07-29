@@ -33,11 +33,17 @@ const getMyevents = async (token)=>{
   return response.data;
 }
 
+ const getEventbyId = async (id) =>{
+   const response = await axios.get(API_URL+'/'+id);
+  
+   return response.data;
+ }
 
 const eventService = {
     create,
     getEvents,
     getMyevents,
+   getEventbyId,
 }
 
 export default eventService

@@ -52,7 +52,24 @@ export const getMyevents = createAsyncThunk('event/myevent', async(_, thunkAPI)=
         return thunkAPI.rejectWithValue(message)
       }
 }) 
+//get event by id
+export const getEventbyId = createAsyncThunk('event/eventid', async(id, thunkAPI)=>{
+    try{
+        console.log(id);
+        return await eventService.getEventbyId(id);
+    }
+    catch (error) {
+        const message =
+          (error.response &&
+            error.response.data &&
+            error.response.data.message) ||
+          error.message ||
+          error.toString()
+        return thunkAPI.rejectWithValue(message)
 
+    }
+
+})
 
 
 export const eventSlice = createSlice({
@@ -102,7 +119,19 @@ export const eventSlice = createSlice({
             state.isError = true;
             state.message = action.payload;
         })
-
+        .addCase(getEventbyId.pending, (state)=>{
+            state.isLoading = true;
+        })
+        .addCase(getEventbyId.fulfilled, (state, action)=>{
+            state.isLoading = false;
+            state.isSuccess = true;
+            state.event = action.payload
+        })
+        .addCase(getEventbyId.rejected, (state,action)=>{
+            state.isLoading = false;
+            state.isError = true;
+            state.message = action.payload;
+        })
     }
         
 })
