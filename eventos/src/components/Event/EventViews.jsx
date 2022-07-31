@@ -27,7 +27,13 @@ function EventViews() {
     <p>ohh</p>
   }
   return (
-    <div>EventViews</div>
+    <div>
+      <div>
+        <h2>{event.title}</h2>
+        <p>from {event.startDate} to {event.endDate}</p>
+        <p></p>
+      </div>
+    </div>
   )
 }
 
