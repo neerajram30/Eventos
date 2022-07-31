@@ -9,6 +9,7 @@ module.exports = {
       'blue':'#646FD4',
       'white':'#FFFFFF',
       'formbg':'#F7F7F7',
+      'btnblue':'#0078AA'
     },
     boxShadow: {
       "eventbox":"0px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.05)",
