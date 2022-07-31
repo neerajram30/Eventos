@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {CalendarIcon, LocationMarkerIcon, TrashIcon, PencilAltIcon} from '@heroicons/react/solid'
+import {useSelector} from 'react-redux'
 
 function Event({event,i}) {
+  const {user} = useSelector((state)=> state.auth);
   return (
 
     <div  key={i} className='shadow-[#ada6a63d] shadow-eventbox rounded-md p-6 h-64 mt-5'>
@@ -21,12 +23,13 @@ function Event({event,i}) {
                     <p className='text-sm font-[600] pt-[7px] pl-1'>{event.venue}</p>
                 </div>
               </div>
+              { user &&
               <div className='flex  justify-end items-end pr-12 pt-10'>
                 <div className='flex text-blue'>
                 <button className='w-7'><PencilAltIcon/></button>
                 <button className='w-7 ml-5'><TrashIcon/></button>
                 </div>
-              </div>
+              </div>}
       </Link>
     </div>
   )
