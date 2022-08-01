@@ -9,10 +9,10 @@ module.exports = {
       'blue':'#646FD4',
       'white':'#FFFFFF',
       'formbg':'#F7F7F7',
-      'btnblue':'#0078AA'
+      'btnblue':'#1A73E8'
     },
     boxShadow: {
-      "eventbox":"0px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.05)",
+      "eventbox":"0px 5px 10px 0px rgba(0, 0, 0, 0.5); ",
       "formbox":"0px 1px 2px 0px rgba(0, 0, 0, 0.05)",
       "createform":"0px 2px 3px 0.5px rgba(0, 0, 0, 0.05)",
       "userform" :"0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
