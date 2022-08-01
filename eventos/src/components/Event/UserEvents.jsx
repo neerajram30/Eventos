@@ -35,7 +35,7 @@ function UserEvents() {
     <main className='flex justify-center mt-10 font-montserrat'>
       <div className='w-2/3'>
         {event.map((data, i) =>
-          <Event event={data} key={i} />
+          <Event event={data} key={i} user={user}/>
         )}
       </div>
 
