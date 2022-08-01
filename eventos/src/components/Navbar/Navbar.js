@@ -5,7 +5,8 @@ import Dropdown from '../assets/icons/Dropdown'
 function Navbar() {
 
   return (
-    <nav className='bg-nvbg h-14 font-montserrat'>
+    <nav className='h-14 font-montserrat'>
+      <div className='fixed w-screen bg-nvbg h-16'>
         <div className='flex justify-between'>
             <div className='pt-2 ml-5 font-inter text-xl'>
               <Link to='/'>
@@ -18,6 +19,7 @@ function Navbar() {
             
             
         </div>
+      </div>
     </nav>
   )
 }
