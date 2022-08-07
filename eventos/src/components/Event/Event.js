@@ -20,13 +20,13 @@ function Event({event,i,user}) {
 
   return (
 
-    <div  key={i} className='shadow-[#ada6a63d] shadow-eventbox rounded-md p-6 h-64 mt-10'>
+    <div  key={i} className='shadow-[#ada6a63d] shadow-eventbox rounded-md p-6 mt-10'>
       <Link to={event._id}>
               <h2 className='text-2xl font-montserrat font-[700]'>{event.title}</h2>
               <div className='mt-2 w-3/4 break-words'>
               <p className='font-thin text-sm'>{event.description}</p>
               </div>
-              <div className='md:flex block pt-8'>
+              <div className='md:flex block pt-8 pb-10'>
                 <div className='flex text-[#647377]'>
                  <div className='flex w-8'><CalendarIcon/></div>
                 <p className='mt-2 pl-2 text-sm font-[600]'>From <span className='text-[0.9em] font-[400]'> {event.startDate} </span>to <span className='text-[0.9em] font-[400]'> {event.endDate}</span></p>
@@ -37,7 +37,7 @@ function Event({event,i,user}) {
                 </div>
               </div>
               { user &&
-              <div className='flex  justify-end items-end pr-12 pt-10'>
+              <div className='flex  justify-end items-end pr-12 pt-10 pb-10'>
                 <div className='flex text-btnblue'>
                 <button className='w-24 h-10 border-[1px] border-btnblue flex justify-center pl-2 pr-2 items-center rounded-sm'>
                 <p className='text-[#000] font-montserrat font-[700] '>Edit</p>
