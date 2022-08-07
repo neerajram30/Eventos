@@ -21,7 +21,7 @@ function EventViews() {
     }
     dispatch(reset())
 
-  }, [isError, message, dispatch])
+  }, [isError, message, dispatch, event_id])
 
   if (isLoading) {
     <p>ohh</p>

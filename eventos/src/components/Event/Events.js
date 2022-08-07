@@ -2,7 +2,6 @@ import React,{useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getEvents,reset } from '../../features/event/eventSlice'
 import Event from './Event'
-import {useParams} from 'react-router-dom'
 function Events() {
 
   const dispatch = useDispatch();
