@@ -1,8 +1,7 @@
-import React,{useState} from 'react'
+import React from 'react'
 import { UserIcon } from '@heroicons/react/outline'
 
 function Myevents() {
-  const [clicked,setClicked] = useState(false)
   return (
     <div className='text-start'>
       <a href="/myevent">
